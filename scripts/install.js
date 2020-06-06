@@ -50,7 +50,8 @@ async function execInstall() {
 
     const pkgContent = JSON.parse(
       await fs.promises.readFile(
-        path.resolve(process.cwd(), "./package.json", "uf8")
+        path.resolve(process.cwd(), "./package.json"),
+        "uf8"
       )
     );
     pkgContent.version = semver.clean(tagName);
