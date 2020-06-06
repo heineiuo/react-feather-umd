@@ -15,6 +15,7 @@ async function createEntry() {
       content,
       "utf8"
     );
+    console.log("Create entry file success");
   } catch (e) {
     console.error(e);
     process.exit(1);

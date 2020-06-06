@@ -43,6 +43,13 @@ async function execInstall() {
       console.log(installResult.stdout);
     }
 
+    await fs.promises.copyFile(
+      path.resolve(process.cwd(), "./package-lock-backup.json"),
+      path.resolve(process.cwd(), "./package-lock.json")
+    );
+
+    console.log(`Install ${pkgName}@${version} success`);
+
     const pkgContent = JSON.parse(
       await fs.promises.readFile(
         path.resolve(process.cwd(), "./package.json", "uf8")
@@ -55,10 +62,7 @@ async function execInstall() {
       JSON.stringify(pkgContent)
     );
 
-    await fs.promises.copyFile(
-      path.resolve(process.cwd(), "./package-lock-backup.json"),
-      path.resolve(process.cwd(), "./package-lock.json")
-    );
+    console.log(`Update package.json success`);
   } catch (e) {
     console.error(e);
     process.exit(1);
