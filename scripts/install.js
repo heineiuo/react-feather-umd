@@ -49,6 +49,7 @@ async function execInstall() {
       )
     );
     pkgContent.version = semver.clean(tagName);
+    pkgContent.name = pkgName;
     await fs.promises.writeFile(
       path.resolve(process.cwd(), "./package.json"),
       JSON.stringify(pkgContent)
