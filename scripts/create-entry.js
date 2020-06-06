@@ -6,7 +6,9 @@ const argv = yargs.argv;
 
 async function createEntry() {
   try {
-    await fs.mkdir(path.resolve(process.cwd(), "./src"));
+    try {
+      await fs.mkdir(path.resolve(process.cwd(), "./src"));
+    } catch (e) {}
     const content = `export * from '${argv.pkg}';`;
     await fs.writeFile(
       path.resolve(process.cwd(), "./src/index.ts"),
