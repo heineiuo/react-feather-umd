@@ -7,7 +7,7 @@ async function updatePkg() {
   const pkgContent = JSON.parse(
     await fs.promises.readFile(
       path.resolve(process.cwd(), "./package.json"),
-      "uf8"
+      "utf8"
     )
   );
 
