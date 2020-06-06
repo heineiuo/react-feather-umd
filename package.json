@@ -16,14 +16,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/heineiuo/react-feather-umd/issues"
   },
   "homepage": "https://github.com/heineiuo/react-feather-umd#readme",
   "devDependencies": {
     "node-ts-scripts": "^0.12.1",
-    "react-feather": "^2.0.8",
     "semver": "^7.3.2",
     "simple-git": "^2.5.0",
     "yargs": "^15.3.1"
