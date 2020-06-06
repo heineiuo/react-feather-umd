@@ -41,9 +41,9 @@ jobs:
           node scripts/install --pkg=react-feather
           node scripts/create-entry --pkg=react-feather
           echo 'Run node-ts-scripts bundle'
-          node scripts/update-package --name=react-feather
+          # node scripts/update-package --name=react-feather
           ./node_modules/.bin/node-ts-scripts bundle src/index.ts --platform=browser --format=umd
-          node scripts/update-package --name=react-feather-umd
+          # node scripts/update-package --name=react-feather-umd
         env:
           CI: true
 
