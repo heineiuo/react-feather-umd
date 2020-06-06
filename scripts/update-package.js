@@ -11,9 +11,9 @@ async function updatePkg() {
     )
   );
 
-  const { name, version } = argv;
-  console.log(`--name=${name} --version=${version}`);
-  Object.assign(pkgContent, { name, version });
+  console.log(`--name=${argv.name} --version=${argv.version}`);
+  if (argv.name) pkgContent.name = argv.name;
+  if (argv.version) pkgContent.version = argv.version;
   console.log("update-package.js: ", pkgContent);
 
   await fs.promises.writeFile(
