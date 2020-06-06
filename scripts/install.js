@@ -38,12 +38,8 @@ async function execInstall() {
 
     console.log(`Run npm install ${pkgName}@${version} -D`);
     const installResult = await exec(`npm install ${pkgName}@${version} -D`);
-    console.log(installResult);
-    if (installResult.stderr) {
-      throw installResult.stderr;
-    } else {
-      console.log(installResult.stdout);
-    }
+    console.log(stdout);
+    console.error(stderr);
 
     await fs.promises.copyFile(
       path.resolve(process.cwd(), "./package-lock-backup.json"),
