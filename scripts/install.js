@@ -35,6 +35,8 @@ async function updatePkg({ version }) {
 
   Object.assign(pkgContent, { version });
 
+  console.log(pkgContent);
+
   await fs.promises.writeFile(
     path.resolve(process.cwd(), "./package.json"),
     JSON.stringify(pkgContent)
