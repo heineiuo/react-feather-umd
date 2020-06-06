@@ -59,6 +59,7 @@ async function execInstall() {
       path.resolve(process.cwd(), "./package-lock.json")
     );
   } catch (e) {
+    console.error(e);
     process.exit(1);
   }
 }

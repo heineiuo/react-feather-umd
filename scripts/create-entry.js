@@ -14,6 +14,7 @@ async function createEntry() {
       "utf8"
     );
   } catch (e) {
+    console.error(e);
     process.exit(1);
   }
 }
