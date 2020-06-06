@@ -38,8 +38,8 @@ jobs:
 
       - name: Build
         run: |
-          node scripts/install --pkg==react-feather
-          node scripts/create-entry --pkg==react-feather
+          node scripts/install --pkg=react-feather
+          node scripts/create-entry --pkg=react-feather
           ./node_modules/.bin/node-ts-scripts bundle src/index.ts --platform=browser --format=umd
         env:
           CI: true
