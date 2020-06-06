@@ -36,6 +36,7 @@ async function execInstall() {
       path.resolve(process.cwd(), "./package-lock-backup.json")
     );
 
+    console.log(`Run npm install ${pkgName}@${version} -D`);
     const installResult = await exec(`npm install ${pkgName}@${version} -D`);
     if (installResult.stderr) {
       throw installResult.stderr;
