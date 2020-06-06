@@ -38,6 +38,7 @@ async function execInstall() {
 
     console.log(`Run npm install ${pkgName}@${version} -D`);
     const installResult = await exec(`npm install ${pkgName}@${version} -D`);
+    console.log(installResult);
     if (installResult.stderr) {
       throw installResult.stderr;
     } else {
